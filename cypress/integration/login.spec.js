@@ -7,8 +7,8 @@ describe('Login', () => {
             method: 'POST',
             url: 'login',
             body: {
-                "email": "fulano@qa.com",
-                "password": "teste" 
+                "email": "rodrigoknova@gmail.com",
+                "password": "teste"
             }
         }).then((response) => {
             expect(response.status).to.equal(200)
@@ -16,5 +16,4 @@ describe('Login', () => {
             cy.log(response.body.authorization)
         })
     });
-
 });
