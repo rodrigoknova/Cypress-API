@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clonar Repositório') {
+            steps {
+                git branch: 'main', url: 'https://github.com/rodrigoknova/cypress-api.git'
+            }
+        }
+        stage('Instalar Dependencias') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Executar Testes') {
+            steps {
+               sh 'NO_COLOR=1 npm run cy:run' 
+            }
+        }
+    }
+}
